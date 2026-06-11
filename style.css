@@ -1,0 +1,13 @@
+/* ページ全体（body）の設定 */
+body {
+    background-color: #f0f8ff; /* 背景を薄い青色に */
+    color: #333333; /* 文字色を濃いグレーに */
+    font-family: sans-serif; /* 文字の形をシンプルに */
+    padding: 20px;
+}
+
+/* 大見出し（h1）の設定 */
+h1 {
+    color: #0056b3; /* 見出しだけ青色に */
+    border-bottom: 2px solid #0056b3; /* 下線を引く */
+}
