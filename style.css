@@ -1,13 +1,52 @@
-/* ページ全体（body）の設定 */
+/* ページ全体の余白をなくす */
 body {
-    background-color: #f0f8ff; /* 背景を薄い青色に */
-    color: #333333; /* 文字色を濃いグレーに */
-    font-family: sans-serif; /* 文字の形をシンプルに */
-    padding: 20px;
+    margin: 0;
+    font-family: sans-serif;
 }
 
-/* 大見出し（h1）の設定 */
-h1 {
-    color: #0056b3; /* 見出しだけ青色に */
-    border-bottom: 2px solid #0056b3; /* 下線を引く */
+/* 1. 一番上の横長背景の設定 */
+.top-header {
+    /* 背景画像と、画像を少し暗くするための黒いフィルターを重ねる */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('cinema.jpeg');
+    background-size: cover; /* 画像を画面幅いっぱいに広げる */
+    background-position: center 30%; /* 画像の中央を表示する */
+    height: 600px; /* 背景画像の縦の高さ */
+    
+    /* 中身を上下左右のど真ん中に配置する魔法のコード */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 2. アイコンと文字を「横並び」にする設定 */
+.profile-container {
+    display: flex;
+    align-items: center; /* 横並びにした時の縦の位置を揃える */
+    gap: 30px; /* アイコンと文字の間の隙間 */
+}
+
+/* 3. 画像を「丸く」する設定 */
+.profile-icon {
+    width: 150px; /* 画像の幅 */
+    height: 150px; /* 画像の高さ */
+    border-radius: 50%; /* これで完全に丸くなります！ */
+    object-fit: cover; /* 丸く切り取った時に画像が歪まないようにする */
+    border: 3px solid white; /* 画像の周りに白いフチをつける */
+}
+
+/* 4. 文字のデザイン */
+.profile-text {
+    color: white; /* 文字色を白に */
+}
+
+.profile-text h1 {
+    margin: 0;
+    font-size: 3rem; /* 名前の文字の大きさ */
+    letter-spacing: 0.5rem; /* 文字と文字の隙間を少し開ける */
+}
+
+.profile-text p {
+    margin: 10px 0 0 0;
+    font-size: 1.5rem; /* 大学名の文字の大きさ */
+    font-weight: bold; /* 大学名を太字に */
 }
