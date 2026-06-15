@@ -2,51 +2,296 @@
 body {
     margin: 0;
     font-family: sans-serif;
+    background-color: black; /* ページ全体のベースを黒にする */
 }
 
-/* 1. 一番上の横長背景の設定 */
+/* =========================================
+   トップページ（ヘッダー）の設定
+   ========================================= */
 .top-header {
-    /* 背景画像と、画像を少し暗くするための黒いフィルターを重ねる */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('cinema.jpeg');
-    background-size: cover; /* 画像を画面幅いっぱいに広げる */
-    background-position: center 30%; /* 画像の中央を表示する */
-    height: 600px; /* 背景画像の縦の高さ */
+    background-image: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.4) 0%,     
+        rgba(0, 0, 0, 0.4) 60%,    
+        rgba(0, 0, 0, 0.8) 85%,    
+        rgba(0, 0, 0, 1) 100%      
+    ), url('cinema.jpeg');
     
-    /* 中身を上下左右のど真ん中に配置する魔法のコード */
+    background-size: cover; 
+    background-position: center 30%; 
+    height: 600px; 
+    
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 2; /* 動画の上に重なるように設定 */
 }
 
-/* 2. アイコンと文字を「横並び」にする設定 */
 .profile-container {
     display: flex;
-    align-items: center; /* 横並びにした時の縦の位置を揃える */
-    gap: 30px; /* アイコンと文字の間の隙間 */
+    align-items: center; 
+    gap: 30px; 
 }
 
-/* 3. 画像を「丸く」する設定 */
 .profile-icon {
-    width: 150px; /* 画像の幅 */
-    height: 150px; /* 画像の高さ */
-    border-radius: 50%; /* これで完全に丸くなります！ */
-    object-fit: cover; /* 丸く切り取った時に画像が歪まないようにする */
-    border: 3px solid white; /* 画像の周りに白いフチをつける */
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 3px solid white; 
 }
 
-/* 4. 文字のデザイン */
 .profile-text {
-    color: white; /* 文字色を白に */
+    color: white; 
 }
 
 .profile-text h1 {
     margin: 0;
-    font-size: 3rem; /* 名前の文字の大きさ */
-    letter-spacing: 0.5rem; /* 文字と文字の隙間を少し開ける */
+    font-size: 3rem; 
+    letter-spacing: 0.5rem; 
 }
 
 .profile-text p {
     margin: 10px 0 0 0;
-    font-size: 1.5rem; /* 大学名の文字の大きさ */
-    font-weight: bold; /* 大学名を太字に */
+    font-size: 1.5rem; 
+    font-weight: bold; 
+}
+
+/* =========================================
+   「私について ＆ 教育」セクション (#about)
+   ========================================= */
+#about {
+    padding: 150px 20px;
+    /* ▼ 変更：fixedの動画を背景として見せるため、ここの背景色は透明（指定なし）にします ▼ */
+    position: relative;
+}
+
+/* ▼ 注目：背景動画の配置スタイルを完全に画面固定に変更 ▼ */
+.background-video {
+    position: fixed; /* absolute から fixed に変更して画面にピン留め！ */
+    top: 0; 
+    left: 0; 
+    width: 100vw; /* 常にウィンドウの横幅ぴったりに */
+    height: 100vh; /* 常にウィンドウの縦幅ぴったりに */
+    object-fit: cover; 
+    z-index: 1; /* コンテンツの後ろ、bodyの真上に配置 */
+    
+    opacity: 0; 
+    transition: opacity 1s ease-out; 
+    pointer-events: none; /* 動画が手前のクリックやスクロールを邪魔しないようにする魔法のコード */
+}
+
+/* =========================================
+   私について（上段）のレイアウト
+   ========================================= */
+.about-container {
+    max-width: 1400px; 
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start; 
+    gap: 60px;
+    position: relative;
+    z-index: 2; /* 固定された動画より前面に表示 */
+}
+
+.starwars-crawl {
+    flex: 3; 
+    display: flex; 
+    gap: 40px; 
+    color: #ffc107; 
+    opacity: 0; 
+    transform: translateY(40px); 
+}
+
+.profile-block, .skills-block {
+    flex: 1;
+}
+
+.starwars-crawl h2 {
+    font-size: 2.2rem; 
+    margin-bottom: 40px;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ffc107; 
+    padding-bottom: 10px;
+}
+
+.profile-list, .skills-list {
+    list-style: none; 
+    padding: 0;
+}
+
+.profile-list li, .skills-list li {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.skills-list li {
+    position: relative;
+    padding-left: 20px;
+}
+.skills-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ffc107;
+}
+
+.profile-list li {
+    display: flex; 
+}
+
+.profile-list li span:first-child {
+    font-weight: bold;
+    width: 110px; 
+    flex-shrink: 0; 
+}
+
+.about-image-wrapper {
+    flex: 1;
+    opacity: 0;
+}
+
+.about-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05); 
+}
+
+/* =========================================
+   教育タイムライン（下段）のレイアウト
+   ========================================= */
+.timeline-container {
+    max-width: 1200px; 
+    margin: 150px auto 0; 
+    position: relative;
+    z-index: 2; /* 固定された動画より前面に表示 */
+}
+
+.section-title {
+    font-size: 2.2rem;
+    color: #ffc107;
+    margin-bottom: 50px;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ffc107;
+    padding-bottom: 10px;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 40px;
+    border-left: 2px dashed rgba(255, 255, 255, 0.3); 
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -47px; 
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ffc107;
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.8);
+}
+
+.timeline-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    background: rgba(0, 0, 0, 0.6); /* ★背景動画が見えやすいよう、カードの背景を少し暗めの半透明に調整 */
+    padding: 30px 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px); /* 背景動画をうっすらぼかして文字の視認性を上げるお洒落エフェクト */
+}
+
+.timeline-text {
+    flex: 1;
+    color: white;
+}
+
+.timeline-text h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+}
+
+.timeline-date {
+    color: #ffc107; 
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.timeline-text p {
+    margin: 5px 0 15px 0;
+    font-size: 1.2rem;
+    color: #ddd;
+}
+
+.timeline-text a {
+    color: #00bcd4; 
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.timeline-text a:hover {
+    text-decoration: underline;
+}
+
+.timeline-image img {
+    width: 200px; 
+    height: auto;
+    border-radius: 8px;
+    background-color: white; 
+    padding: 10px;
+}
+
+/* =========================================
+   アニメーションの発火設定
+   ========================================= */
+#about.in-view .background-video {
+    opacity: 0.9; 
+}
+#about.in-view .starwars-crawl {
+    animation: crawlIn 1.2s ease-out 2.7s forwards; 
+}
+#about.in-view .about-image-wrapper {
+    transition: opacity 1s 1.2s;
+    opacity: 1;
+}
+
+.timeline-item.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+/* =========================================
+   キーフレーム定義
+   ========================================= */
+@keyframes crawlIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

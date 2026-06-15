@@ -16,5 +16,168 @@
             </div>
         </div>
     </header>
+    
+    <section id="about" class="init-animate">
+        <video class="background-video" src="hyperspace.mp4" muted playsinline></video>
+        
+        <div class="about-container starwars-style">
+            <div class="starwars-crawl">
+                <div class="profile-block">
+                    <h2>私について / About Me</h2>
+                    <ul class="profile-list">
+                        <li><span>名前</span><span>伊澤 捷</span></li>
+                        <li><span>所属</span><span>愛知工業大学大学院 経営情報科学研究科 経営情報科学専攻</span></li>
+                        <li><span>生年月日</span><span>2003年12月6日</span></li>
+                        <li><span>趣味</span><span>映画鑑賞 / ゲーム</span></li>
+                        <li><span>アルバイト</span><span>個別指導塾講師</span></li>
+                    </ul>
+                </div>
+                
+                <div class="skills-block">
+                    <h2>技術スタック / Skills</h2>
+                    <ul class="skills-list">
+                        <li>Unity / C# U#(VRChat用スクリプト)</li>
+                        <li>Python</li>
+                        <li>C++ (主に画像処理)</li>
+                        <li>JavaScript</li>
+                        <li>Git / GitHub Pages</li>
+                        <li>Premiere Pro</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="timeline-container">
+            <h2 class="section-title">教育 / Education</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item init-animate">
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <h3>CODE FRIENDS</h3>
+                            <p class="timeline-date">2014 - 2022</p>
+                            <p>プログラミング塾 コードフレンズ</p>
+                            <a href="https://www.codefriends.jp/" target="_blank">https://www.codefriends.jp/</a>
+                        </div>
+                        <div class="timeline-image">
+                            <img src="codefriends.png" alt="CODE FRIENDS">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item init-animate">
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <h3>愛知県立小牧南高校</h3>
+                            <p class="timeline-date">2019 - 2022</p>
+                            <p>普通科</p>
+                            <a href="https://komaki-minami.ed.jp/" target="_blank">https://komaki-minami.ed.jp/</a>
+                        </div>
+                        <div class="timeline-image">
+                            <img src="komakiminami.png" alt="小牧南高校">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item init-animate">
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <h3>愛知工業大学</h3>
+                            <p class="timeline-date">2022 - 2026</p>
+                            <p>情報科学部 情報科学科 コンピュータシステム専攻</p>
+                            <a href="https://www.ait.ac.jp/" target="_blank">https://www.ait.ac.jp/</a>
+                        </div>
+                        <div class="timeline-image">
+                            <img src="ait.png" alt="愛知工業大学">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item init-animate">
+                    <div class="timeline-content">
+                        <div class="timeline-text">
+                            <h3>愛知工業大学大学院</h3>
+                            <p class="timeline-date">2026 - 現在</p>
+                            <p>経営情報科学研究科 経営情報科学専攻</p>
+                            <a href="https://www.ait.ac.jp/" target="_blank">https://www.ait.ac.jp/</a>
+                        </div>
+                        <div class="timeline-image">
+                            <img src="ait.png" alt="愛知工業大学">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const targets = document.querySelectorAll('.init-animate');
+            const video = document.querySelector('.background-video');
+            const aboutSection = document.getElementById('about');
+            const aboutContainer = document.querySelector('.about-container'); // 上段のテキストブロック
+
+            // --- ① タイムライン等の出現アニメーション用 ---
+            const animationObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        animationObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            targets.forEach(target => {
+                // #aboutセクション自体は別の仕組みで動かすので除外
+                if (target.id !== 'about') {
+                    animationObserver.observe(target);
+                }
+            });
+
+            // --- ② 動画再生 ＆ スクロールロック専用 ---
+            const videoObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // 1. スクロール位置を「私について」の中央に自動でピタッと合わせる
+                        entry.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                        // 2. ★スクロールを一時的に禁止（ロック）する★
+                        document.body.style.overflow = 'hidden';
+
+                        // 3. 親セクションにクラスを付けて文字アニメーションを発火
+                        aboutSection.classList.add('in-view');
+
+                        // 4. 動画を再生
+                        if (video) {
+                            video.play();
+
+                            // 5. ★動画が「終了した瞬間」にスクロールロックを解除★
+                            video.addEventListener('ended', function () {
+                                document.body.style.overflow = '';
+                            });
+
+                            // ※安全装置（セーフティネット）
+                            // ネット環境等で動画が止まってしまった場合、永遠に操作不能になるのを防ぐため、
+                            // ご自身の動画の長さ＋2秒くらい（ここでは8000 = 8秒）で強制的にロックを解除します。
+                            setTimeout(() => {
+                                document.body.style.overflow = '';
+                            }, 8000); 
+                        } else {
+                            // 動画が読み込めなかった場合はすぐ解除
+                            document.body.style.overflow = '';
+                        }
+
+                        videoObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 }); // テキストブロックが半分画面に入ったら発動
+
+            if (aboutContainer) {
+                videoObserver.observe(aboutContainer);
+            }
+        });
+    </script>
 </body>
 </html>
