@@ -8,7 +8,7 @@
 <body>
     <header class="top-header">
         <div class="profile-container">
-            <img src="icon.JPG" alt="伊澤 捷" class="profile-icon">
+            <img src="images/icon.JPG" alt="伊澤 捷" class="profile-icon">
             
             <div class="profile-text">
                 <h1>伊澤 捷</h1>
@@ -18,7 +18,7 @@
     </header>
     
     <section id="about" class="init-animate">
-        <video class="background-video" src="hyperspace.mp4" muted playsinline></video>
+        <video class="background-video" src="images/hyperspace.mp4" muted playsinline></video>
         
         <div class="about-container starwars-style">
             <div class="starwars-crawl">
@@ -60,7 +60,7 @@
                             <a href="https://www.codefriends.jp/" target="_blank">https://www.codefriends.jp/</a>
                         </div>
                         <div class="timeline-image">
-                            <img src="codefriends.png" alt="CODE FRIENDS">
+                            <img src="images/education/codefriends.png" alt="CODE FRIENDS">
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                             <a href="https://komaki-minami.ed.jp/" target="_blank">https://komaki-minami.ed.jp/</a>
                         </div>
                         <div class="timeline-image">
-                            <img src="komakiminami.png" alt="小牧南高校">
+                            <img src="images/education/komakiminami.png" alt="小牧南高校">
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                             <a href="https://www.ait.ac.jp/" target="_blank">https://www.ait.ac.jp/</a>
                         </div>
                         <div class="timeline-image">
-                            <img src="ait.png" alt="愛知工業大学">
+                            <img src="images/education/ait.png" alt="愛知工業大学">
                         </div>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                             <a href="https://www.ait.ac.jp/" target="_blank">https://www.ait.ac.jp/</a>
                         </div>
                         <div class="timeline-image">
-                            <img src="ait.png" alt="愛知工業大学">
+                            <img src="images/education/ait.png" alt="愛知工業大学">
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
             
             <div class="works-grid">
                 <div class="work-card init-animate">
-                    <img src="VSBossBattle.png" alt="VS BossBattle" class="work-image">
+                    <img src="images/VSB/VSBossBattle.png" alt="VS BossBattle" class="work-image">
                     <div class="work-content">
                         <h3>VS BossBattle</h3>
                         <p class="work-tech">Unity / C#</p>
@@ -126,7 +126,7 @@
                 </div>
 
                 <div class="work-card init-animate">
-                    <img src="D9.png" alt="ラジオ収録用ワールド" class="work-image">
+                    <img src="images/D9/D9.png" alt="ラジオ収録用ワールド" class="work-image">
                     <div class="work-content">
                         <h3>YouTubeラジオ<br>収録用ワールド</h3>
                         <p class="work-tech">Unity / VRChat SDK</p>
@@ -136,7 +136,7 @@
                 </div>
 
                 <div class="work-card init-animate">
-                    <img src="gimmick.jpg" alt="アバターギミック" class="work-image">
+                    <img src="images/Gimmick/gimmick.jpg" alt="アバターギミック" class="work-image">
                     <div class="work-content">
                         <h3>VRC用アバターギミック</h3>
                         <p class="work-tech">Unity / Modular Avatar</p>
@@ -144,6 +144,52 @@
                         <a href="#" class="work-link open-modal" data-modal="modal-AvatorGimmick">詳細を見る &rarr;</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="research-section">
+        <div class="research-container">
+            <h2 class="section-title">研究 / Research</h2>
+
+            <div class="research-header init-animate">
+                <h3>振動と映像を組み合わせた牽引力錯覚に関する検討</h3>
+                <p class="research-tag">マルチモーダルVR</p>
+                <a href="dicomojsample.pdf" target="_blank" class="btn-primary" style="margin-top: 15px; display: inline-block;">論文を読む (PDF)</a>
+            </div>
+
+            <div class="research-details">
+                
+                <div class="research-row init-animate">
+                    <div class="research-image">
+                        <img src="images/Research/Research1.png" alt="メタバース市場と力覚提示の課題">
+                    </div>
+                    <div class="research-text">
+                        <h4>背景：大掛かりな力覚提示デバイスの限界</h4>
+                        <p>世界のメタバース市場は2022年の8兆6,144億円から2030年には<br>23兆9,738億円に拡大すると予測され、VRの没入感への要求も高まっています。<br>しかし、一般的なコントローラの振動では力の方向や強さを表現するには限界があり、物理的な反力を提示するハードウェアは大掛かりで高価なため、一般家庭への導入には高い障壁が存在していました。</p>
+                    </div>
+                </div>
+
+                <div class="research-row reverse init-animate">
+                    <div class="research-text">
+                        <h4>手法：牽引力錯覚 × 視覚情報のマルチモーダルVR</h4>
+                        <p>大掛かりな装置を用いず、小型デバイスの非対称振動による<br>「牽引力錯覚」を利用したシステムを提案しました。<br>さらにMeta Quest 2を用い、引力（青色）や斥力（赤色）を示唆する<br>映像エフェクトを同期させることで、視覚情報によって触覚の解釈を<br>補完・変容させるアプローチを実装しました。</p>
+                    </div>
+                    <div class="research-image">
+                        <img src="images/Research/research-system.jpg" alt="提案システムの構成">
+                    </div>
+                </div>
+
+                <div class="research-row init-animate">
+                    <div class="research-image">
+                        <img src="images/Research/research-result.jpg" alt="実験結果の分析">
+                    </div>
+                    <div class="research-text">
+                        <h4>結果：方向知覚の劇的な向上と統計的実証</h4>
+                        <p>12名の被験者を対象に実験を行い、Wilcoxonの符号付き順位検定を用いて分析しました。<br>結果として、触覚単独では18.8%と判別が極めて困難だった「斥力」の<br>正答率が、視覚情報を付与することで42.3%まで大きく向上しました。<br>安価かつ軽量な構成でありながら、視覚情報のデザインによって方向提示の明確化において極めて有効であることを実証しました。</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -167,7 +213,7 @@
             <div class="modal-details">
                 <div class="detail-row">
                     <div class="detail-image">
-                        <img src="workVS1.png" alt="BlendTreeの設定">
+                        <img src="images/VSB/workVS1.png" alt="BlendTreeの設定">
                     </div>
                     <div class="detail-text">
                         <h4>キャラクターの滑らかな動き</h4>
@@ -177,7 +223,7 @@
 
                 <div class="detail-row reverse">
                     <div class="detail-image">
-                        <img src="workVS2.png" alt="コードの画面">
+                        <img src="images/VSB/workVS2.png" alt="コードの画面">
                     </div>
                     <div class="detail-text">
                         <h4>追加簡単な敵の攻撃</h4>
@@ -187,7 +233,7 @@
 
                 <div class="detail-row">
                     <div class="detail-image">
-                        <img src="workVS3.png" alt="コードの画面">
+                        <img src="images/VSB/workVS3.png" alt="コードの画面">
                     </div>
                     <div class="detail-text">
                         <h4>敵の攻撃パターン</h4>
@@ -197,7 +243,7 @@
 
                 <div class="detail-row reverse">
                     <div class="detail-image">
-                        <img src="workVS4.png" alt="キャラクター選択画面">
+                        <img src="images/VSB/workVS4.png" alt="キャラクター選択画面">
                     </div>
                     <div class="detail-text">
                         <h4>キャラクター選択</h4>
@@ -207,7 +253,7 @@
 
                 <div class="detail-row">
                     <div class="detail-image">
-                        <img src="workVS5.png" alt="装備選択画面">
+                        <img src="images/VSB/workVS5.png" alt="装備選択画面">
                     </div>
                     <div class="detail-text">
                         <h4>装備システム</h4>
@@ -237,7 +283,7 @@
             <div class="modal-details">
                 <div class="detail-row">
                     <div class="detail-image">
-                        <img src="workVS1.png" alt="ワールドの写真">
+                        <img src="images/works/workVS1.png" alt="ワールドの写真">
                     </div>
                     <div class="detail-text">
                         <h4>ワールドイメージ</h4>
@@ -247,7 +293,7 @@
 
                 <div class="detail-row reverse">
                     <div class="detail-image">
-                        <img src="workVS2.png" alt="蛍光灯の写真">
+                        <img src="images/works/workVS2.png" alt="蛍光灯の写真">
                     </div>
                     <div class="detail-text">
                         <h4>ライティング</h4>
@@ -257,7 +303,7 @@
 
                 <div class="detail-row">
                     <div class="detail-image">
-                        <img src="workVS3.png" alt="コードの画面">
+                        <img src="images/works/workVS3.png" alt="コードの画面">
                     </div>
                     <div class="detail-text">
                         <h4>配信をスムーズに進行するギミック実装</h4>
@@ -286,7 +332,7 @@
             <div class="modal-details">
                 <div class="detail-row">
                     <div class="detail-image">
-                        <img src="workVS1.png" alt="ワールドの写真">
+                        <img src="images/works/workVS1.png" alt="ワールドの写真">
                     </div>
                     <div class="detail-text">
                         <h4>Modular Avatarを活用した<br>非破壊セットアップ</h4>
@@ -296,7 +342,7 @@
 
                 <div class="detail-row reverse">
                     <div class="detail-image">
-                        <img src="workVS2.png" alt="蛍光灯の写真">
+                        <img src="images/works/workVS2.png" alt="蛍光灯の写真">
                     </div>
                     <div class="detail-text">
                         <h4>滑らかな変身エフェクトの制御</h4>
