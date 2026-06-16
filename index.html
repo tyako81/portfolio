@@ -141,7 +141,7 @@
                         <h3>VRC用アバターギミック</h3>
                         <p class="work-tech">Unity / Modular Avatar</p>
                         <p class="work-desc">ハンドジェスチャーをトリガーに発動する変身エフェクト。Modular Avatarを活用し、他のアバターにも容易に導入できる非破壊セットアップを実現しました。</p>
-                        <a href="#" class="work-link">詳細を見る &rarr;</a>
+                        <a href="#" class="work-link open-modal" data-modal="modal-AvatorGimmick">詳細を見る &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -262,6 +262,45 @@
                     <div class="detail-text">
                         <h4>配信をスムーズに進行するギミック実装</h4>
                         <p>YouTubeでの配信を想定し、BGMの切り替え、タイマーなどを操作できるコントロールパネルをU#で実装し、VR空間内でも直感的に操作できるUIで作成しました。しかし、配信を重ねていくうちにOBSで操作したほうが良いことに気づきあまり使われていません。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-AvatorGimmick" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            
+            <h2 class="modal-title">VRC用アバターギミック</h2>
+            
+            <div class="modal-links">
+                <a href="https://youtube.com/channel/UCrBV4iL18617bdYjx6Zuo8A?si=yb75788prCkAZOWa" target="_blank" class="btn-primary">サンプル動画</a>
+            </div>
+
+            <div class="modal-intro">
+                <h3>作品ポイント</h3>
+                <p>映画「ブラックパンサー」の変身シーンにインスパイアされ、特定のハンドジェスチャーをきっかけにアバターが変身するギミックを開発しました。単に自分専用に作るのではなく、他ユーザーへの配布も視野に入れ、どのアバターにも簡単に導入できる「非破壊的な設計」にこだわったのが最大の特徴です。</p>
+            </div>
+
+            <div class="modal-details">
+                <div class="detail-row">
+                    <div class="detail-image">
+                        <img src="workVS1.png" alt="ワールドの写真">
+                    </div>
+                    <div class="detail-text">
+                        <h4>Modular Avatarを活用した非破壊セットアップ</h4>
+                        <p>アバターのAnimatorやExpressionMenuを直接編集することなくギミックを追加するため、Modular Avatarを活用しました。これにより、専門知識が少ないユーザーでもドラッグ＆ドロップ感覚で他のアバターへ容易に導入できる高い再利用性を実現しています。</p>
+                    </div>
+                </div>
+
+                <div class="detail-row reverse">
+                    <div class="detail-image">
+                        <img src="workVS2.png" alt="蛍光灯の写真">
+                    </div>
+                    <div class="detail-text">
+                        <h4>滑らかな変身エフェクトの制御</h4>
+                        <p>変身時の違和感をなくすため、Animatorを用いてマテリアルの不透明度やパーティクルの発生タイミングを制御し、映画のような滑らかな変身シークエンスを実装しました。</p>
                     </div>
                 </div>
             </div>
