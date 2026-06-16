@@ -116,7 +116,7 @@
             
             <div class="works-grid">
                 <div class="work-card init-animate">
-                    <img src="bossbattle.jpg" alt="VS BossBattle" class="work-image">
+                    <img src="VSBossBattle.png" alt="VS BossBattle" class="work-image">
                     <div class="work-content">
                         <h3>VS BossBattle</h3>
                         <p class="work-tech">Unity / C#</p>
@@ -126,12 +126,12 @@
                 </div>
 
                 <div class="work-card init-animate">
-                    <img src="radio-world.jpg" alt="ラジオ収録用ワールド" class="work-image">
+                    <img src="D9.png" alt="ラジオ収録用ワールド" class="work-image">
                     <div class="work-content">
-                        <h3>YouTubeラジオ収録用ワールド</h3>
+                        <h3>YouTubeラジオ<br>収録用ワールド</h3>
                         <p class="work-tech">Unity / VRChat SDK</p>
                         <p class="work-desc">自身のYouTubeラジオ番組「電脳九龍城」の収録用仮想空間スタジオ。配信映えするライティングなど、実際の運用を想定した空間設計・ギミック実装を行いました。</p>
-                        <a href="#" class="work-link">詳細を見る &rarr;</a>
+                        <a href="#" class="work-link open-modal" data-modal="modal-D9">詳細を見る &rarr;</a>
                     </div>
                 </div>
 
@@ -155,8 +155,8 @@
             <h2 class="modal-title">VS BossBattle</h2>
             
             <div class="modal-links">
-                <a href="（ここにYouTubeのURL）" target="_blank" class="btn-primary">プレイ動画を見る (YouTube)</a>
-                <a href="（ここにGitHubのURL）" target="_blank" class="btn-secondary">GitHubを見る</a>
+                <a href="https://youtu.be/PU2aTaovzLQ" target="_blank" class="btn-primary">プレイ動画を見る (YouTube)</a>
+                <a href="https://github.com/tyako81/VSBossBattle-Scripts" target="_blank" class="btn-secondary">GitHubを見る</a>
             </div>
 
             <div class="modal-intro">
@@ -167,7 +167,7 @@
             <div class="modal-details">
                 <div class="detail-row">
                     <div class="detail-image">
-                        <img src="work1.png" alt="BlendTreeの設定">
+                        <img src="workVS1.png" alt="BlendTreeの設定">
                     </div>
                     <div class="detail-text">
                         <h4>キャラクターの滑らかな動き</h4>
@@ -177,7 +177,7 @@
 
                 <div class="detail-row reverse">
                     <div class="detail-image">
-                        <img src="work2.png" alt="コードの画面">
+                        <img src="workVS2.png" alt="コードの画面">
                     </div>
                     <div class="detail-text">
                         <h4>追加簡単な敵の攻撃</h4>
@@ -187,11 +187,81 @@
 
                 <div class="detail-row">
                     <div class="detail-image">
-                        <img src="enemy-attack.jpg" alt="敵の攻撃">
+                        <img src="workVS3.png" alt="コードの画面">
                     </div>
                     <div class="detail-text">
-                        <h4>追加簡単な敵の攻撃</h4>
-                        <p>（ここに敵の攻撃に関する補足説明を入れられます）</p>
+                        <h4>敵の攻撃パターン</h4>
+                        <p>敵のHPが７以下になるともともと１つの攻撃しか行っていなかった敵が同時に2種類の攻撃を発動するようになる。そうすることでプレイヤーが敵の攻撃を回避することが難しくなりゲーム終盤になることでより緊張感が増すようになっている。</p>
+                    </div>
+                </div>
+
+                <div class="detail-row reverse">
+                    <div class="detail-image">
+                        <img src="workVS4.png" alt="キャラクター選択画面">
+                    </div>
+                    <div class="detail-text">
+                        <h4>キャラクター選択</h4>
+                        <p>Classを用いキャラクターを選択できるようにしました。PlayerFabsを用いて簡易的なセーブを行いました。キャラクターはそれぞれ足の速さやHP、攻撃力が違うようになっています。キャラクターを選択できるようにすることで遊びの幅が増加しました。</p>
+                    </div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-image">
+                        <img src="workVS5.png" alt="装備選択画面">
+                    </div>
+                    <div class="detail-text">
+                        <h4>装備システム</h4>
+                        <p>キャラクターシステムのようにClassを用いて装備システムを作成しました。それぞれの装備がプレイヤーのステータスに影響し、ゲームの攻略手段が増加した。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-D9" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            
+            <h2 class="modal-title">ラジオ収録用ワールド</h2>
+            
+            <div class="modal-links">
+                <a href="https://youtube.com/channel/UCrBV4iL18617bdYjx6Zuo8A?si=yb75788prCkAZOWa" target="_blank" class="btn-primary">YouTube Channel</a>
+                <a href="https://vrchat.com/home/launch?worldId=wrld_bb889a54-64e6-4bea-b283-9ef6bd6f091a" target="_blank" class="btn-primary">VRChat World</a>
+            </div>
+
+            <div class="modal-intro">
+                <h3>チャンネル概要</h3>
+                <p>このラジオはメインパーソナリティの二人がカオスなメタバースの素晴らしさを世に広めていくために、様々なトークテーマでひたすら喋り倒す番組となっております。</p>
+            </div>
+
+            <div class="modal-details">
+                <div class="detail-row">
+                    <div class="detail-image">
+                        <img src="workVS1.png" alt="ワールドの写真">
+                    </div>
+                    <div class="detail-text">
+                        <h4>ワールドイメージ</h4>
+                        <p>かつて香港にあった九龍城砦をイメージし、薄暗くスラムっぽい雰囲気を醸し出した</p>
+                    </div>
+                </div>
+
+                <div class="detail-row reverse">
+                    <div class="detail-image">
+                        <img src="workVS2.png" alt="蛍光灯の写真">
+                    </div>
+                    <div class="detail-text">
+                        <h4>ライティング</h4>
+                        <p>長年使われた蛍光灯を彷彿とさせる定期的に点滅するようなライティングを使用</p>
+                    </div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-image">
+                        <img src="workVS3.png" alt="コードの画面">
+                    </div>
+                    <div class="detail-text">
+                        <h4>配信をスムーズに進行するギミック実装</h4>
+                        <p>YouTubeでの配信を想定し、BGMの切り替え、タイマーなどを操作できるコントロールパネルをU#で実装し、VR空間内でも直感的に操作できるUIで作成しました。しかし、配信を重ねていくうちにOBSで操作したほうが良いことに気づきあまり使われていません。</p>
                     </div>
                 </div>
             </div>
