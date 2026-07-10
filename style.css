@@ -216,7 +216,7 @@ body {
     padding: 30px 40px;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px); /* 背景動画をうっすらぼかして文字の視認性を上げるお洒落エフェクト */
+    /* backdrop-filter:blur(4px); 背景動画をうっすらぼかして文字の視認性を上げるお洒落エフェクト */
 }
 
 .timeline-text {
@@ -307,7 +307,7 @@ body {
     background: rgba(0, 0, 0, 0.6);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px);
+    /* backdrop-filter: blur(4px); */
     overflow: hidden; /* 画像が角丸をはみ出さないようにする */
     
     /* スクロールアニメーションの初期状態 */
@@ -384,7 +384,7 @@ body {
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
     background: rgba(0, 0, 0, 0.85); /* 背面をかなり暗くする */
-    backdrop-filter: blur(8px); /* 背面を強くぼかす */
+    /* backdrop-filter: blur(8px); 背面を強くぼかす */
     z-index: 100; /* 一番手前に表示 */
     
     /* 初期状態は非表示 */
@@ -487,7 +487,7 @@ body {
     background: rgba(0, 0, 0, 0.6);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px);
+    /* backdrop-filter: blur(4px); */
     padding: 40px;
     margin-bottom: 50px;
     text-align: center;
@@ -530,7 +530,7 @@ body {
     background: rgba(0, 0, 0, 0.6);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px);
+    /* backdrop-filter: blur(4px); */
     padding: 40px;
     
     opacity: 0;
