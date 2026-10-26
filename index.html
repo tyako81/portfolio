@@ -154,6 +154,16 @@
                         <a href="#" class="work-link open-modal" data-modal="modal-typographyPV">詳細を見る &rarr;</a>
                     </div>
                 </div>
+
+                <div class="work-card init-animate">
+                    <img src="images/Discord/BotProfile.png" alt="案件収集DiscordBot" class="work-image">
+                    <div class="work-content">
+                        <h3>Discord用<br>動画編集案件調査Bot<br>(開発中)</h3>
+                        <p class="work-tech">Node.js / Gemini API / X API</p>
+                        <p class="work-desc">X上から直近24時間以内の動画編集者募集のポストを自動収集し、Gemini APIで<br>募集要項を解析・要約して毎日定時にDiscordへ配信するシステムを開発しました。</p>
+                        <a href="#" class="work-link open-modal" data-modal="modal-DiscordBot">詳細を見る &rarr;</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -523,6 +533,64 @@
                 </div>
             </div>
         </div> 
+    </div>
+
+    <div id="modal-DiscordBot" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            
+            <h2 class="modal-title">Discord用Bot</h2>
+            
+            <div class="modal-links">
+                <!--<a href="https://github.com/..." target="_blank" class="btn-secondary">GitHubを見る</a>-->
+            </div>
+
+            <div class="modal-meta">
+                <div class="meta-item">
+                    <span class="meta-label">ジャンル</span>
+                    <span class="meta-value">業務支援・自動化Bot</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">制作人数</span>
+                    <span class="meta-value">1人</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">制作期間</span>
+                    <span class="meta-value">未定</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">使用技術</span>
+                    <span class="meta-value">Node.js / X API / Gemini API / Discord</span>
+                </div>
+            </div>
+
+            <div class="modal-intro">
+                <h3>作品のポイント</h3>
+                <p>SNS上で日々大量に流れる動画編集者募集の投稿から、案件を手動で探し出す手間を解消するために開発した自動収集・解析Botです。単なるキーワード検索の転送ではなく、Gemini APIを組み込むことで募集文から必要な条件だけを抽出し、見やすいリストに整形して届けるという実用性の高さにこだわりました。</p>
+            </div>
+
+            <div class="modal-details">
+                <div class="detail-row">
+                    <div class="detail-image">
+                        <img src="images/Discord/BotPrompt.png" alt="Gemini解析プロンプト">
+                    </div>
+                    <div class="detail-text">
+                        <h4>Gemini APIによる文章解析と構造化</h4>
+                        <p>XのAPIで取得した投稿文をGeminiのAPIに渡し、業務内容、報酬額、元ポストのURLを自動で抽出しています。<br>ノイズとなる無関係な宣伝投稿を弾きつつ、<br>一定のフォーマットで出力させることで情報の可読性を<br>大幅に高めました。</p>
+                    </div>
+                </div>
+
+                <div class="detail-row reverse">
+                    <div class="detail-image">
+                        <img src="images/Discord/BotMessage.png" alt="Discord通知画面">
+                    </div>
+                    <div class="detail-text">
+                        <h4>Discordへの自動配信</h4>
+                        <p>毎日定時に解析された案件リストがDiscordサーバーの専用チャンネルに投稿される環境を構築しました。<br>リストになって届くため、タイムラインを追い続けること<br>なく効率的に案件へ応募できるようになっています。<br>＊右図は想定画像</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
